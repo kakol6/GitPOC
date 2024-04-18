@@ -1,0 +1,17 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="IKEA_EBCDEPDS01"
+     targetNamespace="http://ws.fwk.ikea.com/business-call"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:impl="http://ws.fwk.ikea.com/business-call"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    >
+    <plnk:partnerLinkType name="CreateDeliveryScheduleDESResponse_PL">
+        <plnk:role name="CreateDeliveryScheduleDESResponse_Role">
+            <plnk:portType name="impl:EBCDEPDS01"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://ws.fwk.ikea.com/business-call" location="oramds:/apps/AIAMetaData/IIPComponents/ApplicationObjectLibrary/DES/V1/wsdls/CreateDeliverySchedule.wsdl"/>
+</wsdl:definitions>

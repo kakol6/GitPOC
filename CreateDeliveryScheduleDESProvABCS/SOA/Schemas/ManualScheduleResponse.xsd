@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xsd:schema targetNamespace="ikea.com/system/iip/ManualScheduleResponse/V0/"
+            xmlns="ikea.com/system/iip/ManualScheduleResponse/V0/"
+            attributeFormDefault="qualified" elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <xsd:complexType name="BusinessService">
+        <xsd:all>
+          <xsd:element name="EbcName" fixed="EBCDEPDS01" type="xsd:string"/>
+          <xsd:element name="BusinessServiceName" fixed="BsScheduleShipment"
+                       type="xsd:string"/>
+          <xsd:element name="BusinessServiceMessageType" fixed="Response"
+                       type="xsd:string"/>
+          <xsd:element name="BusinessServiceVersion" type="xsd:string"/>
+          <xsd:element name="BusinessServiceXmlFormatVersion" fixed="1.0"
+                       type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="CodeTranslator">
+        <xsd:all>
+          <xsd:element name="CodeTranslatorVersion" fixed="6.11.2"
+                       type="xsd:string"/>
+          <xsd:element name="DateGenerated" fixed="2015-02-23"
+                       type="xsd:dateTime"/>
+          <xsd:element name="TimeGenerated" fixed="10:24" type="xsd:string"/>
+          <xsd:element name="User" fixed="dadre2" type="xsd:string"/>
+          <xsd:element name="TemplateName" fixed="ebcbuild-templates-contracts"
+                       type="xsd:string"/>
+          <xsd:element name="TemplateFile" fixed="BsResponse.xsl"
+                       type="xsd:string"/>
+          <xsd:element name="TemplateVersion" fixed="6.11.2" type="xsd:string"/>
+          <xsd:element name="Model" fixed="EBCDEPDS01Ct5.mdl.xml"
+                       type="xsd:string"/>
+          <xsd:element name="SourceName" fixed="ebcdepds01 - CONTRACTS"
+                       type="xsd:string"/>
+          <xsd:element name="SourceVersion" fixed="15.1.0" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:appinfo>
+    <xsd:documentation xml:lang="en">Business Service BsScheduleShipment</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="Type">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".{0,3}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="YesNo">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".{0,3}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SequenceWithinCreator">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".{0,12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusinessUnitCode">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".{0,5}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusinessUnitType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value=".{0,3}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LineNumber">
+    <xsd:restriction base="xsd:int">
+      <xsd:pattern value="\d{1,4}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Report">
+    <xsd:restriction base="xsd:string">
+      <!--xsd:pattern value="(?s)(.){0,4000}"/-->
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TypeInSchedule">
+    <xsd:restriction base="xsd:string">
+      <!--xsd:pattern value=".{0,10}"/-->
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Code">
+    <xsd:restriction base="xsd:string">
+      <!--xsd:pattern value=".{0,5}"/-->
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="BusinessUnitId">
+    <xsd:all>
+      <xsd:element name="Code" type="BusinessUnitCode"/>
+      <xsd:element name="BuType" type="BusinessUnitType"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="BuAddressId">
+    <xsd:all>
+      <xsd:element name="Sequence" type="LineNumber"/>
+      <xsd:element name="BusinessUnit" type="BusinessUnitId" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="ShipmentId">
+    <xsd:all>
+      <xsd:element name="ShpNumber" type="SequenceWithinCreator"/>
+      <xsd:element name="Creator" type="BusinessUnitId" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="SchedulingResponse">
+    <xsd:all>
+      <xsd:element name="ShipmentId" type="ShipmentId" minOccurs="0"/>
+      <xsd:element name="SchedulingResponseReport" type="SchedRespReport"
+                   minOccurs="0"/>
+      <xsd:element name="SchedulingResponseReservationList"
+                   type="SchedRespReservationList" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="SchedRespReport">
+    <xsd:all>
+      <xsd:element name="Text" type="Report"/>
+      <xsd:element name="SchedulingSuccessFlag" type="YesNo"/>
+      <xsd:element name="SchedulingLocationResultList"
+                   type="SchedLocationResultList" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="SchedLocationResult">
+    <xsd:all>
+      <xsd:element name="ObjectiveType" type="TypeInSchedule"/>
+      <xsd:element name="SchedulingReasonCode" type="Code"/>
+      <xsd:element name="BuAddress" type="BuAddressId" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="SchedLocationResultList">
+    <xsd:sequence>
+      <xsd:element name="SchedLocationResult" type="SchedLocationResult"
+                   minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SchedRespReservation">
+    <xsd:all>
+      <xsd:element name="ReservationDate" type="xsd:dateTime" nillable="true"/>
+      <xsd:element name="ActivityType" type="Type"/>
+      <xsd:element name="ReservationDateLatest" type="xsd:dateTime"
+                   nillable="true"/>
+      <xsd:element name="BuAddress" type="BuAddressId" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="SchedRespReservationList">
+    <xsd:sequence>
+      <xsd:element name="SchedRespReservation" type="SchedRespReservation"
+                   minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SchedulingResponse" type="SchedulingResponse">
+    
+  </xsd:element>
+</xsd:schema>

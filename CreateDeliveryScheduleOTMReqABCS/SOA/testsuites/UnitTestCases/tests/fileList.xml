@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+  <entry key="ITMINT-1321_PartLoadFlagNullAndTransportModeGidLCL_PartLoadFlagY.xml"/>
+  <entry key="ITMINT-1321_PartLoadFlagLCLAndTransportModeGidAnything_PartLoadFlagY.xml"/>
+  <entry key="ITMINT-1425_RemoveProcessGroup_AddDataQueue.xml"/>
+  <entry key="ITMINT-1638_MultipleRelease_FirstGetSelectedInTransformation.xml"/>
+</properties>

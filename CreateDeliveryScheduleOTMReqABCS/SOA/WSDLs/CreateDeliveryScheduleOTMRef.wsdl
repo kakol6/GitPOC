@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="CreateDeliveryScheduleOTMRef"
+             targetNamespace="http://xmlns.oracle.com/apps/otm/TransmissionService"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+             xmlns:ns1="http://schemas.oracle.com/bpel/extension"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://xmlns.oracle.com/apps/otm/TransmissionService">
+
+    <plnk:partnerLinkType name="CreateDeliveryScheduleOTMRef">
+        <plnk:role name="CreateDeliveryScheduleOTMRef">
+            <plnk:portType name="tns:TransmissionPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <import namespace="http://xmlns.oracle.com/apps/otm/TransmissionService"
+            location="oramds:/apps/AIAMetaData/IIPComponents/ApplicationObjectLibrary/OTM/V3/wsdls/Transmission.wsdl"/>
+</definitions>
