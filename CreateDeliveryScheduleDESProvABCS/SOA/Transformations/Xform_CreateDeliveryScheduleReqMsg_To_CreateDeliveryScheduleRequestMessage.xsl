@@ -113,7 +113,7 @@
             <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:OriginSystemNew"/>
           </tns:OriginSystem>
           <tns:RequestUser>
-            <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:RequestUser"/>
+            <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:RequestUserNew"/>
           </tns:RequestUser>
           <tns:ShipmentId>
             <tns:ShpNumber>
