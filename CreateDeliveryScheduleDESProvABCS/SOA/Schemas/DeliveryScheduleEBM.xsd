@@ -1,0 +1,73 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ebm="ikea.com/cem/OrderAndDelivery/DeliverySchedule/V0/"
+     xmlns:corecom="ikea.com/system/iip/IIPHeader/1.0/" xmlns:svcdoc="http://xmlns.oracle.com/Services/Documentation/V1"
+     targetNamespace="ikea.com/cem/OrderAndDelivery/DeliverySchedule/V0/" elementFormDefault="qualified">
+    <xsd:import namespace="ikea.com/system/iip/IIPHeader/1.0/" schemaLocation="../../../Common/V1/IIPHeader.xsd"/>
+    <xsd:import namespace="http://schemas.xmlsoap.org/ws/2003/03/addressing" schemaLocation="../../../Common/V1/WS-Addressing.xsd"/>
+    <xsd:import namespace="urn:oasis:names:tc:xacml:2.0:context:schema:cd:04" schemaLocation="../../../Common/V1/access_control-xacml-2.0-context-schema-cd-04.xsd"/>
+    <xsd:import namespace="urn:oasis:names:tc:xacml:2.0:policy:schema:cd:04" schemaLocation="../../../Common/V1/access_control-xacml-2.0-policy-schema-cd-04.xsd"/>
+    <xsd:include schemaLocation="DeliveryScheduleCEM.xsd"/>
+    <xsd:annotation>
+        <xsd:documentation>
+            <svcdoc:CEM>
+                <svcdoc:Description>DeliverySchedule EBM identifies all the service operations that are supported for the DeliverySchedule CEM</svcdoc:Description>
+                <svcdoc:Type>EBM</svcdoc:Type>
+                <svcdoc:Industry/>
+                <svcdoc:CEMName>DeliveryScheduleCEM</svcdoc:CEMName>
+            </svcdoc:CEM>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="DeliveryScheduleEBMType">
+        <xsd:complexContent>
+            <xsd:extension base="ebm:DeliveryScheduleCEMType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="DeliveryScheduleReponseEBMType">
+        <xsd:complexContent>
+            <xsd:extension base="ebm:DeliveryScheduleResponseCEMType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CreateDeliveryScheduleEBMType">
+        <xsd:complexContent>
+            <xsd:extension base="corecom:EBMType">
+                <xsd:sequence>
+                    <xsd:element name="DataArea" type="ebm:CreateDeliveryScheduleDataAreaType"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="CreateDeliveryScheduleEBM" type="ebm:CreateDeliveryScheduleEBMType"/>
+    <xsd:complexType name="CreateDeliveryScheduleDataAreaType">
+        <xsd:sequence>
+            <xsd:element ref="ebm:CreateDeliverySchedule"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreateDeliveryScheduleType">
+        <xsd:complexContent>
+            <xsd:extension base="ebm:DeliveryScheduleEBMType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="CreateDeliverySchedule" type="ebm:CreateDeliveryScheduleType"/>
+    <xsd:complexType name="CreateDeliveryScheduleResponseEBMType">
+        <xsd:complexContent>
+            <xsd:extension base="corecom:EBMType">
+                <xsd:sequence>
+                    <xsd:element name="DataArea" type="ebm:CreateDeliveryScheduleResponseDataAreaType"
+                         maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="CreateDeliveryScheduleResponseEBM" type="ebm:CreateDeliveryScheduleEBMType"/>
+    <xsd:complexType name="CreateDeliveryScheduleResponseDataAreaType">
+        <xsd:sequence>
+            <xsd:element ref="ebm:CreateDeliveryScheduleResponse"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreateDeliveryScheduleResponseType">
+        <xsd:complexContent>
+            <xsd:extension base="ebm:DeliveryScheduleReponseEBMType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="CreateDeliveryScheduleResponse" type="ebm:CreateDeliveryScheduleResponseType"/>
+</xsd:schema>

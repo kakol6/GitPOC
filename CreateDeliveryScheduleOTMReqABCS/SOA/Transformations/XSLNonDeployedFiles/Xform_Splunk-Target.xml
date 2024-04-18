@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tns:SplunkPersonalInfoRequest xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns2="http://schemas.oracle.com/bpel/extension" xmlns:ns1="ikea.com/system/iip/CreateDeliveryScheduleOTMReqABCSService/1.0/" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns4="ikea.com/system/iip/bamAuditMessage/1.0/" xmlns:ns3="http://xmlns.oracle.com/apps/otm/IntXmlService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:aol="ikea.com/system/iip/CreateDeliveryScheduleOTMReqABCS/1.0/" xmlns:tns="ikea.com/iip-splunk/SplunkPersonalInfo/V2/">
+   <tns:Technology/>
+   <tns:IntegrationName/>
+   <tns:ECID/>
+   <tns:FlowId/>
+   <tns:BankAccountCount/>
+   <tns:BankBicCount/>
+   <tns:EmailCount>0</tns:EmailCount>
+   <tns:FaxNumberCount>0</tns:FaxNumberCount>
+   <tns:NameCount>0</tns:NameCount>
+   <tns:PhoneNumberCount>0</tns:PhoneNumberCount>
+   <tns:AddressCount/>
+</tns:SplunkPersonalInfoRequest>

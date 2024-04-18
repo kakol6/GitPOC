@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<composite xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:ns1="http://xmlns.oracle.com/soa/designer/" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ns3="http://schemas.oracle.com/ws/2006/01/policy" mode="active" name="CreateDeliveryScheduleDESProvABCS" revision="1.0" state="on" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--<svcdoc:AIA>
+               <svcdoc:ServiceSolutionComponentAssociation>
+                    <svcdoc:GUID></svcdoc:GUID>
+               </svcdoc:ServiceSolutionComponentAssociation>
+    </svcdoc:AIA>-->
+    <import location="oramds:/apps/AIAMetaData/IIPComponents/InfrastructureServiceLibrary/V1/wsdls/IIPAsyncErrorHandlingProcess.wsdl" namespace="ikea.com/system/iip/IIPAsyncErrorHandlingService/1.0/" />
+    <import location="oramds:/apps/AIAMetaData/IIPComponents/InfrastructureServiceLibrary/V1/schemas/IIPFaultMessage.xsd" namespace="ikea.com/system/iip/IIPFaultMessage/1.0/" />
+    <import importType="xsd" location="oramds:/apps/AIAMetaData/IIPComponents/CommonExchangeModelLibrary/Core/Common/V1/IIPHeader.xsd" namespace="ikea.com/system/iip/IIPHeader/1.0/" />
+    <import importType="wsdl" location="WSDLs/CreateDeliveryScheduleDESProvABCSRef.wsdl" namespace="ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/" />
+    <import importType="wsdl" location="oramds:/apps/AIAMetaData/IIPComponents/UtilityArtifacts/RuntimeFault.wsdl" namespace="http://schemas.oracle.com/bpel/extension" />
+    <!--import namespace="ikea.com/system/iip/ReceiveDeliveryScheduleResponseService/1.0/"
+            location="WSDLs/ReceiveDeliveryScheduleResponseServiceWrapper.wsdl"
+            importType="wsdl"/-->
+    <import location="WSDLs/CreateDeliveryScheduleDESProvABCS_Properties.wsdl" namespace="http://xmlns.oracle.com/CreateDeliveryScheduleDESProvABCS/correlationset" />
+    <!--import namespace="ikea.com/system/iip/ReceiveDeliveryScheduleResponseService/1.0/" 
+                 location="WSDLs/ReceiveDeliveryScheduleResponseServiceWrapper.wsdl"/-->
+    <import importType="wsdl" location="WSDLs/CreateDeliverySchedule_2Wrapper.wsdl" namespace="http://ws.fwk.ikea.com/business-call" />
+    <service name="CreateDeliveryScheduleDESProvABCS" ns1:wsdlLocation="WSDLs/CreateDeliveryScheduleDESProvABCSRef.wsdl">
+        <interface.wsdl interface="ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/#wsdl.interface(CreateDeliveryScheduleDESProvABCS)" />
+        <!--<svcdoc:AIA>
+                    <svcdoc:Service>
+                      <svcdoc:InterfaceDetails>
+                         <svcdoc:ServiceName></svcdoc:ServiceName>
+                        <svcdoc:Namespace></svcdoc:Namespace>
+                            <svcdoc:ArtifactType>EnterpticeBusinessService</svcdoc:ArtifactType>
+                            <svcdoc:ServiceOperation>
+                              <svcdoc:Name></svcdoc:Name>
+                            </svcdoc:ServiceOperation>		
+                      </svcdoc:InterfaceDetails>
+                      <svcdoc:ImplementationDetails>
+                         <svcdoc:ApplicationName>DES</svcdoc:ApplicationName>
+                         <svcdoc:BaseVersion></svcdoc:BaseVersion>
+                         <svcdoc:DevelopedBy>Oracle</svcdoc:DevelopedBy>
+                         <svcdoc:OracleCertified>Yes</svcdoc:OracleCertified>
+                         <svcdoc:ArtifactType>ProviderABCSImplementation</svcdoc:ArtifactType>
+                         <svcdoc:ServiceOperation>
+                            <svcdoc:Name>CreateDeliverySchedule</svcdoc:Name>
+                         </svcdoc:ServiceOperation>
+                      </svcdoc:ImplementationDetails>
+                   </svcdoc:Service>
+        </svcdoc:AIA>-->
+        <binding.ws port="ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/#wsdl.endpoint(CreateDeliveryScheduleDESProvABCS/CreateDeliveryScheduleDESProvABCS)">
+            <ns2:PolicyReference URI="ikea/wss_username_token_internal_service_policy" ns3:category="security" ns3:status="enabled" />
+            <property many="false" name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string">NEVER</property>
+        </binding.ws>
+    </service>
+    <property name="oracle.composite.faultPolicyFile">oramds:/apps/AIAMetaData/faultPolicies/fault-policies.xml</property>
+    <property name="oracle.composite.faultBindingFile">oramds:/apps/AIAMetaData/faultPolicies/async/fault-bindings.xml</property>
+    <component name="CreateDeliveryScheduleDESProvABCSProcess">
+        <implementation.bpel src="BPEL/CreateDeliveryScheduleDESProvABCSProcess.bpel" />
+<componentType xmlns:ui="http://xmlns.oracle.com/soa/designer/">
+    <service name="CreateDeliveryScheduleDESProvABCS" ns1:wsdlLocation="WSDLs/CreateDeliveryScheduleDESProvABCSRef.wsdl">
+        <interface.wsdl interface="ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/#wsdl.interface(CreateDeliveryScheduleDESProvABCS)" />
+    </service>
+    <!--service name="ReceiveDeliveryScheduleResponseService"
+             ui:wsdlLocation="WSDLs/ReceiveDeliveryScheduleResponseServiceWrapper.wsdl">
+        <interface.wsdl interface="ikea.com/system/iip/ReceiveDeliveryScheduleResponseService/1.0/#wsdl.interface(ReceiveDeliveryScheduleResponse_ptt)"/>
+    </service-->
+    <reference name="IIPAsyncErrorHandlingProcess" ns1:wsdlLocation="oramds:/apps/AIAMetaData/IIPComponents/InfrastructureServiceLibrary/V1/wsdls/IIPAsyncErrorHandlingProcess.wsdl">
+        <interface.wsdl interface="ikea.com/system/iip/IIPAsyncErrorHandlingService/1.0/#wsdl.interface(IIPAsyncErrorHandlingProcess)" />
+    </reference>
+    <reference name="CreateDeliveryScheduleDES" ns1:wsdlLocation="WSDLs/CreateDeliverySchedule_2Wrapper.wsdl">
+        <interface.wsdl interface="http://ws.fwk.ikea.com/business-call#wsdl.interface(EBCDEPDS01)" />
+    </reference>
+        </componentType>
+        <property name="bpel.config.transaction">required</property>
+        <property name="bpel.preference.reportToBAM" type="xs:boolean">true</property><property many="false" name="configuration.sensorLocation" type="xs:string">BPEL/CreateDeliveryScheduleDESProvABCSProcess_sensor.xml</property>
+        <property many="false" name="configuration.sensorActionLocation" type="xs:string">BPEL/CreateDeliveryScheduleDESProvABCSProcess_sensorAction.xml</property>
+        <property name="bpel.config.oneWayDeliveryPolicy">sync</property>
+        <property name="bpel.preference.tracingEnabled" type="xs:boolean">true</property>
+        <property many="false" name="bpel.preference.clientId" override="may">CLIENTID</property>
+        <property many="false" name="bpel.preference.environmentId" override="may">ENVIRONMENTID</property>
+        <property many="false" name="bpel.preference.desEnvironment" override="may">DESENVIRONMENTID</property>
+        <property name="bpel.preference.reportToBAMCallOut" type="xs:boolean">true</property>
+        <property name="bpel.preference.reportToBAMCallIn" type="xs:boolean">true</property>
+        <property name="bpel.preference.reportToBAMError" type="xs:boolean">true</property>
+            
+    </component>
+    <reference name="IIPAsyncErrorHandlingProcess" ns1:wsdlLocation="oramds:/apps/AIAMetaData/IIPComponents/InfrastructureServiceLibrary/V1/wsdls/IIPAsyncErrorHandlingProcess.wsdl">
+        <interface.wsdl interface="ikea.com/system/iip/IIPAsyncErrorHandlingService/1.0/#wsdl.interface(IIPAsyncErrorHandlingProcess)" xmlns:ns="http://xmlns.oracle.com/sca/1.0" />
+        <binding.ws location="oramds:/apps/AIAMetaData/IIPComponents/InfrastructureServiceLibrary/V1/wsdls/IIPAsyncErrorHandlingProcess.wsdl" port="ikea.com/system/iip/IIPAsyncErrorHandlingService/1.0/#wsdl.endpoint(IIPAsyncErrorHandlingProcess/IIPAsyncErrorHandlingProcess)" xmlns:ns="http://xmlns.oracle.com/sca/1.0">
+            <property many="false" name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string">WSDLDriven</property>
+        </binding.ws>
+        <!--<svcdoc:AIA>
+                    <svcdoc:Reference>
+                        <svcdoc:ArtifactType>UtilityService</svcdoc:ArtifactType>
+                        <svcdoc:ServiceOperation>
+                        <svcdoc:Name>initiate</svcdoc:Name>
+                        </svcdoc:ServiceOperation>
+                    </svcdoc:Reference>
+                    </svcdoc:AIA>-->
+    </reference>
+    <reference name="CreateDeliveryScheduleDES" ns1:wsdlLocation="WSDLs/CreateDeliverySchedule_2Wrapper.wsdl">
+        <interface.wsdl interface="http://ws.fwk.ikea.com/business-call#wsdl.interface(EBCDEPDS01)" />
+        <binding.ws location="WSDLs/CreateDeliverySchedule_2Wrapper.wsdl" port="http://ws.fwk.ikea.com/business-call#wsdl.endpoint(EBCDEPDS01Service/EBCDEPDS01ServicePort)" soapVersion="1.1">
+            <ns2:PolicyReference URI="ikea/wss_username_token_internal_client_policy" ns3:category="security" ns3:status="enabled" />
+            <!--property name="oracle.soa.uddi.serviceKey" type="xs:string" many="false">uddi:8f07cb40-d9ef-11e2-98ba-380efd5098ba</property-->
+            <!--property many="false" name="endpointURI" override="may">ITFWSENDPOINTURI</property-->
+            <property many="false" name="csf-key" override="may">oitp-service-account</property>
+            <property many="false" name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string">WSDLDriven</property>
+        </binding.ws>
+    </reference>
+    <wire>
+        <source.uri>CreateDeliveryScheduleDESProvABCSProcess/IIPAsyncErrorHandlingProcess</source.uri>
+        <target.uri>IIPAsyncErrorHandlingProcess</target.uri>
+    </wire>
+    <wire>
+        <source.uri>CreateDeliveryScheduleDESProvABCS</source.uri>
+        <target.uri>CreateDeliveryScheduleDESProvABCSProcess/CreateDeliveryScheduleDESProvABCS</target.uri>
+    </wire>
+    <wire>
+        <source.uri>CreateDeliveryScheduleDESProvABCSProcess/CreateDeliveryScheduleDES</source.uri>
+        <target.uri>CreateDeliveryScheduleDES</target.uri>
+    </wire>
+</composite>

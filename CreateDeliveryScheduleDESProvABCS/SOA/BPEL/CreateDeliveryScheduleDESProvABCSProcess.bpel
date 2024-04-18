@@ -1,0 +1,1276 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: 
+  Author:  AIAServiceConstructor Oracle SOA Toolbox
+  Purpose: Provider CreateDeliveryScheduleDESProvABCS
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="CreateDeliveryScheduleDESProvABCSProcess"
+         targetNamespace="ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/"
+         xmlns:abcsns="ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/"
+         xmlns:servicereqelns="ikea.com/cem/DeliverySchedule/1.0/"
+         xmlns:servicereselns="ikea.com/cem/DeliverySchedule/1.0/"
+         xmlns:servicefaultelns="ikea.com/system/iip/IIPHeader/1.0/"
+         xmlns:targetns="ikea.com/system/DES/CreateDeliveryScheduleService/1.0/"
+         xmlns:targetreqelns="ikea.com/system/DES/CreateDeliverySchedule/1.0/"
+         xmlns:targetreselns="ikea.com/system/DES/CreateDeliverySchedule/1.0/"
+         xmlns:aia="http://www.oracle.com/XSL/Transform/java/oracle.apps.aia.core.xpath.AIAFunctions"
+         xmlns:coreheader="ikea.com/system/iip/IIPHeader/1.0/"
+         xmlns:corefault="ikea.com/system/iip/IIPFaultMessage/1.0/"
+         xmlns:ikeaeh="ikea.com/system/iip/IIPAsyncErrorHandlingService/1.0/"
+         xmlns:xacml="urn:oasis:names:tc:xacml:2.0:context:schema:cd:04"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ehdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.esb.server.headers.ESBHeaderFunctions"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:orcl="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:socket="http://www.oracle.com/XSL/Transform/java/oracle.tip.adapter.socket.ProtocolTranslator"
+         xmlns:mhdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.mediator.service.common.functions.MediatorExtnFunction"
+         xmlns:soaxpath="http://ns.oracle-soa.se/aia/bpel/xpath"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:med="http://schemas.oracle.com/mediator/xpath"
+         xmlns:ns1="ikea.com/cem/OrderAndDelivery/DeliverySchedule/V0/"
+         xmlns:ns2="http://oracle.com/sca/soapservice/delivery-schedule-sca-cem/CreateDeliveryScheduleDESProvABCS/ReceiveDeliveryScheduleResponse"
+         xmlns:ns3="ikea.com/system/iip/ReceiveDeliveryScheduleResponseService/1.0/"
+         xmlns:ns4="http://ws.fwk.ikea.com/business-call"
+         xmlns:ns5="http://xmlns.oracle.com/CreateDeliveryScheduleDESProvABCS/correlationset"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns6="ikea.com/system/iip/ManualScheduleResponse/V0/"
+         xmlns:bam="ikea.com/system/iip/bamAuditMessage/1.0/" xmlns:ess="http://xmlns.oracle.com/scheduler"
+         xmlns:bpelxpath="http://ns.oracle-soa.se/bpel/xpath" xmlns:ns7="http://ws.fwk.ikea.com/fwk-service-call">
+    <bpelx:annotation>
+        <bpelx:analysis>
+            <bpelx:property name="wsdlFile">
+                <![CDATA[../WSDLs/CreateDeliveryScheduleDESProvABCSProcess.wsdl]]>
+            </bpelx:property>
+        </bpelx:analysis>
+    </bpelx:annotation>
+    <partnerLinks>
+        <partnerLink myRole="IIPAsyncErrorHandlingProcessRequester"
+                     name="IIPAsyncErrorHandlingProcess"
+                     partnerRole="IIPAsyncErrorHandlingProcessProvider"
+                     partnerLinkType="ikeaeh:IIPAsyncErrorHandlingProcess"/>
+        <partnerLink myRole="CreateDeliveryScheduleDESProvABCSProvider"
+                     name="CreateDeliveryScheduleDESProvABCS"
+                     partnerLinkType="abcsns:CreateDeliveryScheduleDESProvABCS"/>
+        <!--partnerLink name="ReceiveDeliveryScheduleResponseService"
+                     partnerLinkType="ns3:ReceiveDeliveryScheduleResponseService"
+                     myRole="ReceiveDeliveryScheduleResponse_ptt"/-->
+        <partnerLink name="CreateDeliveryScheduleDES"
+                     partnerLinkType="ns4:CreateDeliveryScheduleDESResponse_PL"
+                     partnerRole="CreateDeliveryScheduleDESResponse_Role"/>
+    </partnerLinks>
+    <variables>
+        <!--variable name="CreateDeliveryScheduleReqMsg"
+                  messageType="abcsns:CreateDeliveryScheduleReqMsg"/-->
+        <variable name="CreateDeliveryScheduleResMsg"
+                  messageType="abcsns:CreateDeliveryScheduleResMsg"/>
+        <variable name="CreateDeliveryScheduleFaultMsg"
+                  messageType="abcsns:FaultMsg"/>
+        <variable name="SystemFaultVar"
+                  messageType="bpelx:RuntimeFaultMessage"/>
+        <variable name="IIPAsyncErrorHandlingProcessRequestMessage"
+                  messageType="ikeaeh:IIPAsyncErrorHandlingProcessRequestMessage"/>
+        <variable name="SystemFaultMsg"
+                  messageType="bpelx:RuntimeFaultMessage"/>
+        <variable name="SystemID" type="xsd:string"/>
+        <variable name="Title" type="xsd:string"/>
+        <variable name="EBM_HEADER" element="coreheader:EBMHeader"/>
+        <variable name="InstanceID" type="xsd:string"/>
+        <variable name="ServiceName" type="xsd:string"/>
+        <variable name="TraceLogEnabled" type="xsd:boolean"/>
+        <variable name="IsError" type="xsd:boolean"/>
+        <variable name="CreateDeliveryScheduleReqMsg"
+                  messageType="abcsns:CreateDeliveryScheduleReqMsg"/>
+        <!--variable name="Invoke_CreateDeliveryScheduleDES_CreateDeliverySchedule_InputVariable"
+                  messageType="ns4:ScheduleShipmentRequest"/>
+        <variable name="Invoke_CreateDeliveryScheduleDES_CreateDeliverySchedule_OutputVariable"
+                  messageType="ns4:ScheduleShipmentResponse"/-->
+        <variable name="BamAuditMessageSensorVariable" element="bam:bamAuditMessageRequest"/>
+        <variable name="BamAuditMessageVariable" element="bam:bamAuditMessageRequest"/>
+        <variable name="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                  messageType="ns4:ScheduleLocationsRequest"/>
+        <variable name="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_OutputVariable"
+                  messageType="ns4:ScheduleLocationsResponse"/>
+        <variable name="MessageId" type="xsd:string"/>
+        <variable name="ClientID" type="xsd:string"/>
+        <variable name="EnvironmentID" type="xsd:string"/>
+        <variable name="endPointRef" element="wsa:EndpointReference"/>
+        <variable name="Cache_Key" type="xsd:string"/>
+		<variable name="isTargetError" type="xsd:string"/>
+    </variables>
+    <correlationSets>
+        <correlationSet name="ManualResponseCorrelation"
+                        properties="ns5:shipmentId"/>
+    </correlationSets>
+    <!--correlationSets>
+        <correlationSet name="CorrelationSet1" properties="ns5:ShipmentName"/>
+    </correlationSets-->
+    <sequence name="global_Sequence">
+        <scope name="MainScope">
+            <faultHandlers>
+                <catch faultName="bpelx:remoteFault"
+                       faultVariable="SystemFaultVar">
+                    <sequence name="RemoteFault_Sequence">
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceFault("RemoteFault", getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <assign name="Assign_Error">
+                            <copy>
+                                <from expression="ora:processXSLT('Transformations/EBM_to_Fault.xsl',bpws:getVariableData('EBM_HEADER'))"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from variable="SystemFaultVar" part="code"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorCode"/>
+                            </copy>
+                            <copy>
+                                <from variable="SystemFaultVar" part="summary"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorText"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from variable="SystemFaultVar" part="detail"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:StackTrace"/>
+                            </copy>
+                            <copy>
+                                <from expression="true()"/>
+                                <to variable="IsError"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from expression="dvm:lookupValue('oramds:/apps/AIAMetaData/IIPComponents/dvm/Common/DeliverySchedule_IIP_EH_ALERT_LIST.dvm','AlertName','ITM_DES_SHP_P_PROV_001','AlertValue','')" />
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                  query="/corefault:IIPFaultMessage/corefault:AlertID"/>
+                            </copy>
+							<copy>
+                                <from expression="true()"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="isTargetError"/>
+                            </copy>						  
+                        </assign>
+                    </sequence>
+                </catch>
+                <catch faultName="bpelx:bindingFault"
+                       faultVariable="SystemFaultVar">
+                    <sequence name="BindingFault_Sequence">
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceFault("BindingFault", getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <assign name="Assign_Error">
+                            <copy>
+                                <from expression="ora:processXSLT('Transformations/EBM_to_Fault.xsl',bpws:getVariableData('EBM_HEADER'))"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from variable="SystemFaultVar" part="code"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorCode"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from variable="SystemFaultVar" part="summary"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorText"/>
+                            </copy>
+                            <copy>
+                                <from expression="true()"/>
+                                <to variable="IsError"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from expression="dvm:lookupValue('oramds:/apps/AIAMetaData/IIPComponents/dvm/Common/DeliverySchedule_IIP_EH_ALERT_LIST.dvm','AlertName','ITM_DES_SHP_P_PROV_002','AlertValue','')" />
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                  query="/corefault:IIPFaultMessage/corefault:AlertID"/>
+                            </copy>
+                            <copy>
+                                <from expression="true()"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="isTargetError"/>
+                            </copy>
+                        </assign>
+                    </sequence>
+                </catch>
+                <catch faultName="bpelx:subLanguageExecutionFault"
+                       faultVariable="SystemFaultVar">
+                    <sequence name="SubLanguageFault_Sequence">
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceFault("SubLanguageExecution", getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <assign name="Assign_Error">
+                            <copy>
+                                <from expression="ora:processXSLT('Transformations/EBM_to_Fault.xsl',bpws:getVariableData('EBM_HEADER'))"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from variable="SystemFaultVar" part="code"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorCode"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from variable="SystemFaultVar" part="summary"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorText"/>
+                            </copy>
+                            <copy>
+                                <from expression="true()"/>
+                                <to variable="IsError"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from expression="dvm:lookupValue('oramds:/apps/AIAMetaData/IIPComponents/dvm/Common/DeliverySchedule_IIP_EH_ALERT_LIST.dvm','AlertName','ITM_DES_SHP_P_PROV_003','AlertValue','')" />
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                  query="/corefault:IIPFaultMessage/corefault:AlertID"/>
+                            </copy>
+                        </assign>
+                    </sequence>
+                </catch>
+                <catchAll>
+                    <sequence name="CheckAll_Sequence">
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceFault("CatchAll", getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <assign name="Assign_Error">
+                            <copy>
+                                <from expression="ora:processXSLT('Transformations/EBM_to_Fault.xsl',bpws:getVariableData('EBM_HEADER'))"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from expression="ora:getFaultName()"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorCode"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from expression="ora:getFaultAsString()"/>
+                                <to variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                    part="FaultMessage"
+                                    query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ErrorText"/>
+                            </copy>
+                            <copy>
+                                <from expression="true()"/>
+                                <to variable="IsError"/>
+                            </copy>
+                            <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                <from expression="dvm:lookupValue('oramds:/apps/AIAMetaData/IIPComponents/dvm/Common/DeliverySchedule_IIP_EH_ALERT_LIST.dvm','AlertName','ITM_DES_SHP_P_PROV_004','AlertValue','')" />
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                  query="/corefault:IIPFaultMessage/corefault:AlertID"/>
+                            </copy>
+                        </assign>
+                    </sequence>
+                </catchAll>
+            </faultHandlers>
+            <sequence name="main_Sequence">
+                <scope name="Init">
+                    <bpelx:annotation>
+                        <bpelx:general>
+                            <bpelx:property name="userLabel">InitScope</bpelx:property>
+                        </bpelx:general>
+                    </bpelx:annotation>
+                    <sequence>
+                        <receive name="CreateDeliverySchedule"
+                                 portType="abcsns:CreateDeliveryScheduleDESProvABCS"
+                                 variable="CreateDeliveryScheduleReqMsg"
+                                 createInstance="yes"
+                                 partnerLink="CreateDeliveryScheduleDESProvABCS"
+                                 operation="CreateDeliverySchedule"/>
+                        <assign name="Assign_EBM_HEADER">
+                            <copy>
+                                <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                      variable="CreateDeliveryScheduleReqMsg" part="CreateDeliveryScheduleEBM"
+                                      query="/ns1:CreateDeliveryScheduleEBM/servicefaultelns:EBMHeader"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="EBM_HEADER" query="/servicefaultelns:EBMHeader"/>
+                            </copy>
+                            <copy>
+                                <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                      variable="CreateDeliveryScheduleReqMsg" part="CreateDeliveryScheduleEBM"
+                                      query="/ns1:CreateDeliveryScheduleEBM/servicefaultelns:EBMHeader/servicefaultelns:MessageID"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="MessageId"/>
+                            </copy>
+                            <copy>
+                                <from expression="ora:getPreference('clientId')"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="ClientID"/>
+                            </copy>
+                            <copy>
+                                <from expression="ora:getPreference('environmentId')"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="EnvironmentID"/>
+                            </copy>
+                        </assign>
+                        <assign name="GetTitle">
+                            <copy>
+                                  <from expression="concat('CreateDeliverySchedule-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'),'-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'),'-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"
+                                        bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                <to variable="Title"/>
+                            </copy>
+                            <copy>
+                                <from expression="ora:getInstanceId()"/>
+                                <to variable="InstanceID"/>
+                            </copy>
+                            <copy>
+                                <from expression="ora:getProcessId()"/>
+                                <to variable="ServiceName"/>
+                            </copy>
+                            <copy>
+                                <from expression="false()"/>
+                                <to variable="IsError"/>
+                            </copy>
+                            <copy>
+                                <from expression="ora:getPreference('tracingEnabled')"/>
+                                <to variable="TraceLogEnabled"/>
+                            </copy>
+                        </assign>
+                        <bpelx:exec name="SetTitle" language="java"
+                                    version="1.5">
+                            <![CDATA[oraext:setFlowInstanceTitle((String)getVariableData("Title"));]]>
+                        </bpelx:exec>
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.startInstance(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                    </sequence>
+                </scope>
+                <scope name="EnrichScope">
+                    <bpelx:annotation>
+                        <bpelx:general>
+                            <bpelx:property name="userLabel">EnrichScope</bpelx:property>
+                        </bpelx:general>
+                    </bpelx:annotation>
+                    <sequence>
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+				if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceEnrich(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                    </sequence>
+                </scope>
+                <scope name="Transform">
+                    <bpelx:annotation>
+                        <bpelx:general>
+                            <bpelx:property name="userLabel">TransformScope</bpelx:property>
+                        </bpelx:general>
+                    </bpelx:annotation>
+                    <sequence>
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceTransform(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <assign name="Xform_CreateDeliveryScheduleReqMsg_To_CreateDeliveryScheduleRequestMessage">
+                            <bpelx:annotation>
+                                <bpelx:pattern>transformation</bpelx:pattern>
+                            </bpelx:annotation>
+                            <copy>
+                                <from expression="ora:doXSLTransformForDoc('../Transformations/Xform_CreateDeliveryScheduleReqMsg_To_CreateDeliveryScheduleRequestMessage.xsl', $CreateDeliveryScheduleReqMsg.CreateDeliveryScheduleEBM,'MessageId', $MessageId, 'EnvironmentID', $EnvironmentID, 'ClientID', $ClientID)"/>
+                                <to variable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                                    part="pRequest"/>
+                            </copy>
+                        </assign>
+                        <!--
+                        <assign name="Assign_ITFHeaderValues">
+                            <copy>
+                                <from expression="ora:getPreference('clientId')"/>
+                                <to variable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                                    part="pRequest" query="/ns4:BsScheduleLocationsRequest/ns4:EBCHeader/ns7:clientId"/>
+                            </copy>
+                            
+                            <copy>
+                                <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                      variable="CreateDeliveryScheduleReqMsg" part="CreateDeliveryScheduleEBM"
+                                      query="/ns1:CreateDeliveryScheduleEBM/servicefaultelns:EBMHeader/servicefaultelns:MessageID"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                                    part="pRequest"
+                                    query="/ns4:BsScheduleLocationsRequest/ns4:EBCHeader/ns7:messageId"/>
+                            </copy>
+                            <copy>
+                                <from expression="ora:getPreference('environmentId')"/>
+                                <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                    variable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                                    part="pRequest"
+                                    query="/ns4:BsScheduleLocationsRequest/ns4:EBCHeader/ns7:environmentId"/>
+                            </copy>
+                        </assign>
+                        -->
+                    </sequence>
+                </scope>
+                <scope name="Operate">
+                    <bpelx:annotation>
+                        <bpelx:general>
+                            <bpelx:property name="userLabel">OperateScope</bpelx:property>
+                        </bpelx:general>
+                    </bpelx:annotation>
+                    <sequence>
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.enterOperate(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"), getVariableData("EBM_HEADER"));]]>
+                        </bpelx:exec>
+                        <assign name="SetupOperateDebug">
+                            <copy>
+                                <from variable="CreateDeliveryScheduleReqMsg" part="CreateDeliveryScheduleEBM"/>
+                                <to variable="CreateDeliveryScheduleReqMsg" part="CreateDeliveryScheduleEBM"/>
+                            </copy>
+                        </assign>
+                        <assign name="SetupOperate">
+                            <bpelx:annotation>
+                                <bpelx:pattern>transformation</bpelx:pattern>
+                            </bpelx:annotation>
+                            <copy>
+                                <from expression="ora:doXSLTransformForDoc('../Transformations/AddTargetSystemID.xsl', $CreateDeliveryScheduleReqMsg.CreateDeliveryScheduleEBM)"/>
+                                <to variable="CreateDeliveryScheduleReqMsg"
+                                    part="CreateDeliveryScheduleEBM"/>
+                            </copy>
+                        </assign>
+                        <assign name="Assign_EBM_HEADER_WithTargetSystemNode">
+                            <copy>
+                                <from variable="CreateDeliveryScheduleReqMsg"
+                                      part="CreateDeliveryScheduleEBM"
+                                      query="/ns1:CreateDeliveryScheduleEBM/coreheader:EBMHeader"/>
+                                <to variable="EBM_HEADER"
+                                    query="/coreheader:EBMHeader"/>
+                            </copy>
+                        </assign>
+                        <assign name="SetupOperateDebug">
+                            <copy>
+                                <from variable="CreateDeliveryScheduleReqMsg"
+                                      part="CreateDeliveryScheduleEBM"/>
+                                <to variable="CreateDeliveryScheduleReqMsg"
+                                    part="CreateDeliveryScheduleEBM"/>
+                            </copy>
+                            <copy>
+                                <from expression="'{ikea.com/system/iip/CreateDeliveryScheduleDESProvABCSService/1.0/}CreateDeliveryScheduleDESProvABCS'"/>
+                                <to variable="ServiceName"/>
+                            </copy>
+                            <copy>
+                                <from variable="CreateDeliveryScheduleReqMsg"
+                                      part="CreateDeliveryScheduleEBM"
+                                      query="/ns1:CreateDeliveryScheduleEBM/coreheader:EBMHeader/coreheader:Target/coreheader:ID"/>
+                                <to variable="SystemID"/>
+                            </copy>
+                        </assign>
+                        <scope name="BAMScope" bpelx:skipCondition="ora:getPreference('reportToBAM')='false'"
+                               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                               xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+                               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+                               xmlns:bam="ikea.com/system/iip/bamAuditMessage/1.0/"
+                               xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20">
+                            <faultHandlers>
+                                <catchAll>
+                                    <empty name="Empty"/>
+                                </catchAll>
+                            </faultHandlers>
+                            <sequence name="BAMSequence">
+                                <assign name="Assign_BAMSensor_InputData">
+                                    <copy>
+                                        <from expression="ora:getECID()"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:technicalIdentifier"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'IIP'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:source"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'DES'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:target"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'ABCSProviderReq'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:sourceType"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="ora:getProcessId()"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:serviceName"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'Sent'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:status"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="xp20:current-dateTime()"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPForwardedDate"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'SOA'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:implementationType"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'RequestReply'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:integrationType"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="ora:getFlowId()"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:instanceId"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'IIP'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:createdName"/>
+                                    </copy>
+                                    <copy>
+                                        <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                              variable="BamAuditMessageVariable"
+                                              query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPForwardedDate"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:creationDate"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'OIP_DELIVERY_00002_DELIVERYSCHEDULE'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAOERIntegrationContractName"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'od.del.des.DeliverySchedule'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAOERServiceSpecificationName"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'1'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAOERServiceSpecificationVersion"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'CallOut'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAInvocationPoint"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'ShipmentNo'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:BusinessObjects/bam:BusinessObject/bam:BusinessIdentifiers/bam:BusinessIdentifier/bam:BKey"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'),'-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'),'-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:BusinessObjects/bam:BusinessObject/bam:BusinessIdentifiers/bam:BusinessIdentifier/bam:BValue"/>
+                                    </copy>
+                                </assign>
+                                <assign name="Assign_BAMSensors_trigger">
+                                    <copy>
+                                        <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                              variable="BamAuditMessageVariable"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageSensorVariable"/>
+                                    </copy>
+                                </assign>
+                            </sequence>
+                        </scope>
+                        <scope name="WS_Lookup_And_ActualWSCall_Scope">
+                            <sequence name="WS_Lookup_And_ActualWSCall_Sequence">
+                                <assign name="Assign_DesUrl">
+                                    <copy>
+                                        <from expression="dvm:lookupValue('oramds:/apps/AIAMetaData/IIPComponents/dvm/DeliverySchedule/DeliveryScheduleWsEndpoints.dvm','DES_WS_ENDPOINT',ora:getPreference('desEnvironment'),'Url','')"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="endPointRef" query="/wsa:EndpointReference/wsa:Address"/>
+                                    </copy>
+                                    <copy>
+                                        <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                              variable="endPointRef"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            partnerLink="CreateDeliveryScheduleDES"/>
+                                    </copy>
+                                </assign>
+                                <invoke name="Invoke_CreateDeliveryScheduleDES"
+                                        inputVariable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                                        outputVariable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_OutputVariable"
+                                        partnerLink="CreateDeliveryScheduleDES" portType="ns4:EBCDEPDS01"
+                                        operation="ScheduleLocations" bpelx:invokeAsDetail="no"/>
+                            </sequence>
+                        </scope>
+                        <!--invoke name="Invoke1"
+                                inputVariable="Invoke1_CreateDeliverySchedule_InputVariable"
+                                outputVariable="Invoke1_CreateDeliverySchedule_OutputVariable"
+                                partnerLink="CreateDeliveryScheduleDES"
+                                portType="ns4:EBCDEPDS01"
+                                operation="CreateDeliverySchedule"
+                                bpelx:invokeAsDetail="no"/-->
+                        <!--assign name="Assign1">
+                            <copy>
+                                <from variable="CreateDeliveryScheduleReqMsg"
+                                      part="CreateDeliveryScheduleEBM"
+                                      query="/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoShipmentCns/ns1:ShipmentId"/>
+                                <to variable="Title"/>
+                            </copy>
+                        </assign-->
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.exitOperate(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <switch name="Switch1">
+                            <case condition="ora:countNodes(bpws:getVariableData('Invoke_CreateDeliveryScheduleDES_ScheduleLocations_OutputVariable','pResponse','/ns4:BsScheduleLocationsResponse/ns4:ERRORS'))>0">
+                                <bpelx:annotation>
+                                    <bpelx:general>
+                                        <bpelx:property name="userLabel">IsErrorFromDES</bpelx:property>
+                                    </bpelx:general>
+                                </bpelx:annotation>
+                                <assign name="Xform_CreateDeliveryScheduleErrorMessage">
+                                    <bpelx:annotation>
+                                        <bpelx:pattern>transformation</bpelx:pattern>
+                                    </bpelx:annotation>
+                                    <copy>
+                                        <from expression="ora:doXSLTransformForDoc('../Transformations/Xform_DeliveryScheduleErrorMessage.xsl', $Invoke_CreateDeliveryScheduleDES_ScheduleLocations_OutputVariable.pResponse)"/>
+                                        <to variable="CreateDeliveryScheduleResMsg"
+                                            part="CreateDeliveryScheduleResponseEBM"/>
+                                    </copy>
+                                </assign>
+                            </case>
+                            <case condition="ora:countNodes(bpws:getVariableData('Invoke_CreateDeliveryScheduleDES_ScheduleLocations_OutputVariable','pResponse','/ns4:BsScheduleLocationsResponse/ns4:OutVoSchedulingResponse'))>0">
+                                <bpelx:annotation>
+                                    <bpelx:general>
+                                        <bpelx:property name="userLabel">IsResponseFromDES</bpelx:property>
+                                    </bpelx:general>
+                                </bpelx:annotation>
+                                <sequence>
+                                    <assign name="Xform_CreateDeliveryScheduleResponseMessage_To_CreateDeliveryScheduleResMsg">
+                                        <bpelx:annotation>
+                                            <bpelx:pattern>transformation</bpelx:pattern>
+                                        </bpelx:annotation>
+                                        <copy>
+                                            <from expression="ora:doXSLTransformForDoc('../Transformations/Xform_CreateDeliveryScheduleResponseMessage_To_CreateDeliveryScheduleResMsg.xsl', $Invoke_CreateDeliveryScheduleDES_ScheduleLocations_OutputVariable.pResponse)"/>
+                                            <to variable="CreateDeliveryScheduleResMsg"
+                                                part="CreateDeliveryScheduleResponseEBM"/>
+                                        </copy>
+                                    </assign>
+                                </sequence>
+                            </case>
+                            <otherwise>
+                                <sequence name="Sequence1">
+                                    <empty name="DoNothing"/>
+                                </sequence>
+                            </otherwise>
+                        </switch></sequence>
+                </scope>
+                <scope name="TransformResponse">
+                    <bpelx:annotation>
+                        <bpelx:general>
+                            <bpelx:property name="userLabel">TransformScope</bpelx:property>
+                        </bpelx:general>
+                    </bpelx:annotation>
+                    <sequence>
+                        <bpelx:exec name="TraceLog" version="1.5"
+                                    language="java">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceTransform(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <assign name="Assign_EBM_HEADER_To_RespEBM">
+                            <bpelx:insertBefore>
+                                <bpelx:from variable="EBM_HEADER"
+                                            query="/coreheader:EBMHeader"/>
+                                <bpelx:to variable="CreateDeliveryScheduleResMsg"
+                                          part="CreateDeliveryScheduleResponseEBM"
+                                          query="/ns1:CreateDeliveryScheduleResponseEBM/ns1:DataArea"/>
+                            </bpelx:insertBefore>
+                        </assign>
+                        <bpelx:exec name="TraceLog" language="java"
+                                    version="1.5"
+                                    xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                            <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.stopInstance(getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                        </bpelx:exec>
+                        <scope name="BAMScope" bpelx:skipCondition="ora:getPreference('reportToBAM')='false'"
+                               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                               xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+                               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+                               xmlns:bam="ikea.com/system/iip/bamAuditMessage/1.0/"
+                               xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20">
+                            <faultHandlers>
+                                <catchAll>
+                                    <empty name="Empty"/>
+                                </catchAll>
+                            </faultHandlers>
+                            <sequence name="BAMSequence">
+                                <assign name="Assign_BAMSensor_InputData">
+                                    <copy>
+                                        <from expression="'DES'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:source"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'IIP'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:target"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'ABCSProviderRes'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:sourceType"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'Received'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:status"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="xp20:current-dateTime()"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPReceivedDate"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="''"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPForwardedDate"/>
+                                    </copy>
+                                    <copy>
+                                        <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                              variable="BamAuditMessageVariable"
+                                              query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPReceivedDate"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:creationDate"/>
+                                    </copy>
+                                    <copy>
+                                        <from expression="'CallIn'"
+                                              bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageVariable"
+                                            query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAInvocationPoint"/>
+                                    </copy>
+                                </assign>
+                                <assign name="Assign_BAMSensors_trigger">
+                                    <copy>
+                                        <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                              variable="BamAuditMessageVariable"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                            variable="BamAuditMessageSensorVariable"/>
+                                    </copy>
+                                </assign>
+                            </sequence>
+                        </scope>
+                        <sequence>
+                            <reply name="CreateDeliverySchedule_Reply"
+                                   variable="CreateDeliveryScheduleResMsg"
+                                   portType="abcsns:CreateDeliveryScheduleDESProvABCS"
+                                   partnerLink="CreateDeliveryScheduleDESProvABCS"
+                                   operation="CreateDeliverySchedule"
+                                   xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"/>
+                        </sequence>
+                    </sequence>
+                </scope>
+            </sequence>
+        </scope>
+        <scope name="ErrorScope">
+            <switch name="isError">
+                <case condition="bpws:getVariableData('IsError') = true()">
+                    <bpelx:annotation>
+                        <bpelx:general>
+                            <bpelx:property name="userLabel">isError</bpelx:property>
+                        </bpelx:general>
+                    </bpelx:annotation>
+                    <scope name="Error">
+                        <bpelx:annotation>
+                            <bpelx:general>
+                                <bpelx:property name="userLabel">ErrorScope</bpelx:property>
+                            </bpelx:general>
+                        </bpelx:annotation>
+                        <sequence name="Sequence_SubLanguageExecutionFault">
+                            <assign name="Assign_Error">
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from expression="ora:getProcessId()"/>
+                                    <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:FaultingService/corefault:FaultingServiceName"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                          variable="CreateDeliveryScheduleReqMsg" part="CreateDeliveryScheduleEBM"/>
+                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:SenderMessageReference/corefault:Payload"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                          variable="Invoke_CreateDeliveryScheduleDES_ScheduleLocations_InputVariable"
+                                          part="pRequest"/>
+                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:TargetMessageReference/corefault:Payload"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"/>
+                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:TransactionID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from expression="'SOA'"
+                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                    <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:FaultingService/corefault:FaultingServiceImplementationType"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from expression="ora:getInstanceId()"
+                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                    <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:FaultingService/corefault:FaultingServiceInstanceID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from expression="ora:getECID()"
+                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                    <to variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                        query="/corefault:IIPFaultMessage/corefault:ECID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                    <from expression="ora:getFlowId()"/>
+                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                    variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                    query="/corefault:IIPFaultMessage/corefault:InstanceID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'ITM'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:AlertSystemEndpointID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'IIP'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:SourceSystem"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'DES'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:TargetSystem"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'CreateDeliverySchedule'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:OperationName"/>
+                                </copy>
+                                <!--copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'od.del.itm.DeliverySchedule SS'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:IntegrationContractNameVer"/>
+                                </copy-->
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="oraext:generate-guid()"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:GUID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="xp20:current-dateTime()"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:ReportDateTime"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'E'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:SeverityLevel"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="'7200'"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:ErrorContext/corefault:ExpirationTime"/>
+                                </copy>
+                        
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:SenderMessageReference/corefault:MessageID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:SenderMessageReference/corefault:ObjectReferenceID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:TargetMessageReference/corefault:MessageID"/>
+                                </copy>
+                                <copy bpelx:insertMissingToData="yes" bpelx:ignoreMissingFromData="yes">
+                                        <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'), '-', bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"/>
+                                        <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="IIPAsyncErrorHandlingProcessRequestMessage" part="FaultMessage"
+                                                        query="/corefault:IIPFaultMessage/corefault:TargetMessageReference/corefault:ObjectReferenceID"/>
+                                </copy>
+                                
+                            </assign>
+                            <assign name="AssignFault">
+                                <copy>
+                                    <from variable="IIPAsyncErrorHandlingProcessRequestMessage"
+                                          part="FaultMessage"/>
+                                    <to variable="CreateDeliveryScheduleFaultMsg"
+                                        part="FaultMessage"/>
+                                </copy>
+                            </assign>
+                            <reply name="CreateDeliverySchedule_ReplyFault"
+                                   faultName="abcsns:Fault"
+                                   variable="CreateDeliveryScheduleFaultMsg"
+                                   partnerLink="CreateDeliveryScheduleDESProvABCS"
+                                   portType="abcsns:CreateDeliveryScheduleDESProvABCS"
+                                   operation="CreateDeliverySchedule"/>
+                            <scope name="BAMScope" bpelx:skipCondition="ora:getPreference('reportToBAM')='false'"
+                                   xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                                   xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+                                   xmlns:ora="http://schemas.oracle.com/xpath/extension"
+                                   xmlns:bam="ikea.com/system/iip/bamAuditMessage/1.0/"
+                                   xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20">
+                                <faultHandlers>
+                                    <catchAll>
+                                        <empty name="Empty"/>
+                                    </catchAll>
+                                </faultHandlers>
+                                <sequence name="BAMSequence">
+                                    <assign name="Assign_BAMSensor_InputData"
+                                            xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/">
+                                        <copy>
+                                            <from expression="ora:getECID()"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:technicalIdentifier"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'IIP'"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:source"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'IIP'"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:target"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'ABCSProviderReq'"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:sourceType"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="ora:getProcessId()"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:serviceName"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'Failed'"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:status"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="''"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPReceivedDate"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="xp20:current-dateTime()"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPForwardedDate"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'SOA'"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:implementationType"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'RequestReply'"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:integrationType"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="ora:getFlowId()"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:instanceId"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'IIP'"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:createdName"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  variable="BamAuditMessageVariable"
+                                                  query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPForwardedDate"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:creationDate"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'OIP_DELIVERY_00002_DELIVERYSCHEDULE'"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAOERIntegrationContractName"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'od.del.des.DeliverySchedule'"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAOERServiceSpecificationName"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'1'"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAOERServiceSpecificationVersion"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'CallOut'"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAInvocationPoint"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="'ShipmentNo'"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:BusinessObjects/bam:BusinessObject/bam:BusinessIdentifiers/bam:BusinessIdentifier/bam:BKey"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                        <copy>
+                                            <from expression="concat(bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:Code'),'-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:Creator/ns1:BuType'),'-',bpws:getVariableData('CreateDeliveryScheduleReqMsg','CreateDeliveryScheduleEBM','/ns1:CreateDeliveryScheduleEBM/ns1:DataArea/ns1:CreateDeliverySchedule/ns1:DeliverySchedule/ns1:DATA/ns1:InVoSchedulingRequestITM/ns1:ShipmentId/ns1:ShpNumber'))"
+                                                  bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageVariable"
+                                                query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:BusinessObjects/bam:BusinessObject/bam:BusinessIdentifiers/bam:BusinessIdentifier/bam:BValue"
+                                                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                        </copy>
+                                    </assign>
+                                    <switch name="Switch2">
+                                        <case condition="bpws:getVariableData('isTargetError') = true()">
+                                            <bpelx:annotation>
+                                                <bpelx:general>
+                                                    <bpelx:property name="userLabel">
+                                                        <![CDATA[CheckTargetError]]>
+                                                    </bpelx:property>
+                                                </bpelx:general>
+                                            </bpelx:annotation>
+                                            <assign name="Assign_BAMSensor_InputData"
+                                                    xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/">
+                                                <copy>
+                                                    <from expression="'DES'"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:source"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                                <copy>
+                                                    <from expression="'IIP'"
+                                                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:target"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                                <copy>
+                                                    <from expression="'ABCSProviderRes'"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:sourceType"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                                <copy>
+                                                    <from expression="'Failed'"
+                                                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:status"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                                <copy>
+                                                    <from expression="xp20:current-dateTime()"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPReceivedDate"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                                <copy>
+                                                    <from expression="''"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPForwardedDate"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                                <copy>
+                                                    <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                          variable="BamAuditMessageVariable"
+                                                          query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IIPReceivedDate"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:creationDate"/>
+                                                </copy>
+                                                <copy>
+                                                    <from expression="'CallIn'"
+                                                          xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                                                          bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"/>
+                                                    <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                        variable="BamAuditMessageVariable"
+                                                        query="/bam:bamAuditMessageRequest/bam:bamAuditMessage/bam:IKEAInvocationPoint"
+                                                        xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+                                                </copy>
+                                            </assign>
+                                        </case>
+                                    </switch>
+                                    <assign name="Assign_BAMSensors_trigger">
+                                        <copy>
+                                            <from bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                  variable="BamAuditMessageVariable"/>
+                                            <to bpelx:language="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                                                variable="BamAuditMessageSensorVariable"/>
+                                        </copy>
+                                    </assign>
+                                </sequence>
+                            </scope>
+                            <invoke name="Invoke_IIPAsyncErrorHandlingProcess"
+                                    partnerLink="IIPAsyncErrorHandlingProcess"
+                                    portType="ikeaeh:IIPAsyncErrorHandlingProcess"
+                                    operation="notify"
+                                    inputVariable="IIPAsyncErrorHandlingProcessRequestMessage"/>
+                            <bpelx:exec name="TraceLog" language="java"
+                                        version="1.5">
+                                <![CDATA[java.lang.Boolean isTrace = (java.lang.Boolean)getVariableData("TraceLogEnabled");   
+                     if (isTrace) se.oraclesoa.iip.bpel.functions.Tracer.traceFault("ErrorHandler",getVariableData("Title"), getVariableData("InstanceID"), getVariableData("ServiceName"));]]>
+                            </bpelx:exec>
+                        </sequence>
+                    </scope>
+                </case>
+            </switch>
+        </scope>
+    </sequence>
+</process>

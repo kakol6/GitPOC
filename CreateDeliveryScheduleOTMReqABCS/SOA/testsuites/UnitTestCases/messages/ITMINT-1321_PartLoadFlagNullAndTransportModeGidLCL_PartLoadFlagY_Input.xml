@@ -1,0 +1,2410 @@
+<otm:Transmission xmlns:otm="http://xmlns.oracle.com/apps/otm" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+	<otm:TransmissionHeader>
+		<otm:Version>6.4.3</otm:Version>
+		<otm:TransmissionCreateDt>
+			<otm:GLogDate>20220307130636</otm:GLogDate>
+			<otm:TZId>UTC</otm:TZId>
+			<otm:TZOffset>+00:00</otm:TZOffset>
+		</otm:TransmissionCreateDt>
+		<otm:TransactionCount>1</otm:TransactionCount>
+		<otm:SenderHostName>https://cmseelm-lx4298.ikeadt.com:8081</otm:SenderHostName>
+		<otm:SenderSystemID>https://cmseelm-lx4298.ikeadt.com:8081</otm:SenderSystemID>
+		<otm:SenderTransmissionNo>16566068</otm:SenderTransmissionNo>
+		<otm:ReferenceTransmissionNo>0</otm:ReferenceTransmissionNo>
+		<otm:GLogXMLElementName>PlannedShipment</otm:GLogXMLElementName>
+		<otm:NotifyInfo>
+			<otm:ContactGid>
+				<otm:Gid>
+					<otm:DomainName>I</otm:DomainName>
+					<otm:Xid>SHIP_TO_DES</otm:Xid>
+				</otm:Gid>
+			</otm:ContactGid>
+			<otm:ExternalSystemGid>
+				<otm:Gid>
+					<otm:DomainName>I</otm:DomainName>
+					<otm:Xid>SHIP_TO_DES</otm:Xid>
+				</otm:Gid>
+			</otm:ExternalSystemGid>
+		</otm:NotifyInfo>
+	</otm:TransmissionHeader>
+	<otm:TransmissionBody>
+		<otm:GLogXMLElement>
+			<otm:TransactionHeader>
+				<otm:SenderTransactionId>1007032527</otm:SenderTransactionId>
+				<otm:ObjectModInfo>
+					<otm:InsertDt>
+						<otm:GLogDate>20220304190141</otm:GLogDate>
+						<otm:TZId>UTC</otm:TZId>
+						<otm:TZOffset>+00:00</otm:TZOffset>
+					</otm:InsertDt>
+					<otm:UpdateDt>
+						<otm:GLogDate>20220307130454</otm:GLogDate>
+						<otm:TZId>UTC</otm:TZId>
+						<otm:TZOffset>+00:00</otm:TZOffset>
+					</otm:UpdateDt>
+				</otm:ObjectModInfo>
+				<otm:SendReason>
+					<otm:Remark>
+						<otm:RemarkSequence>1</otm:RemarkSequence>
+						<otm:RemarkQualifierGid>
+							<otm:Gid>
+								<otm:Xid>REM</otm:Xid>
+							</otm:Gid>
+						</otm:RemarkQualifierGid>
+						<otm:RemarkText>SHIP|DES</otm:RemarkText>
+					</otm:Remark>
+					<otm:SendReasonGid>
+						<otm:Gid>
+							<otm:Xid>SHIPMENT_EVENT - null</otm:Xid>
+						</otm:Gid>
+					</otm:SendReasonGid>
+					<otm:ObjectType>SHIPMENT</otm:ObjectType>
+				</otm:SendReason>
+			</otm:TransactionHeader>
+			<otm:PlannedShipment>
+				<otm:Shipment>
+					<otm:ShipmentHeader>
+						<otm:ShipmentGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>00486542</otm:Xid>
+							</otm:Gid>
+						</otm:ShipmentGid>
+						<otm:ShipmentName>021-TSO-S10000063108</otm:ShipmentName>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:Xid>COG</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>Center of Gravity (x,y,z): I.1878512-[1,015 MM,940 MM,3,195.5 MM]</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:Xid>GLOG</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>I.00486542</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>1-2 DAYS EARLY ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>3+ DAYS EARLY ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ACTIVITY OT-LATE ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV CARRIER ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>NLCHROBU</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV LU-ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>TRUCK-100</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV MODE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>TL</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV MSG STATUS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>PROCESSED</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV MSG TYPE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>UPDATE</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV SHIPMENT ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>500001382199</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV TRACKING URL</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>https://na12.voc.sandbox.p-44.com/portal/v2/public/shipment-details/tl/06a14f58-dd5d-4dec-a251-fa7108bb5dee</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ASV VENDOR ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>P44</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>AUTO BOOK</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>N</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>AUTO BOOK VOLUME</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>124</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BN</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>BOOK1</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BOOKING_COM_METHOD</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>EDI</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BP PROCESS ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>021-TSO-1:988-CP-1_ORDX:PJ20220304-000055-IBR2</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CAPACITY LIMIT GID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>I.4745784F79636D43665A30726D4D7A4D716C376169673D3D</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CARRIER LUT CODE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>T90</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CNS LUT CODE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>T90</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CNS MOT CODE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>M</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CONNECTED ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>14</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>EARLY NEED ARRIVAL ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>EARLY ORDER SHARE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0.00</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FTI SHP FLOWTYPE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>I.INBOUND</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FULL PALLET COUNT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>2</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>IFTMBF DELIVERY ERROR - CIP</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>OK</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ISO EQUIPMENT CODE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>NO CODE AVAILABLE</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LAST ALERT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>SHP MANUAL HANDLING REQUIRED [AS1004]</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LATE ORDER SHARE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>1.00</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LATEST TRACKING INFORMATION</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>Shipment Booking Confimed 04-MAR-2022</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LU-ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>TRUCK-100</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>MANUALLY MODIFIED</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>Y</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>MH BOOK MAIN FIRST</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>N</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ON TIME ORDER SHARE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0.00</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ORDERED VOLUME</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>3.484</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ORDERED WEIGHT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>245.216</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>OVER CAPACITY PROCESS ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>426701903</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PARTITION</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>021-TSO-1:SCANDINAVIA:988-CP-1</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PICK PALLET COUNT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PLANNED VOLUME</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>24.39</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PLANNED WEIGHT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>1716.51</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PREV CAPACITY LIMIT GID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>I.4745784F79636D43665A30726D4D7A4D716C376169673D3D</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PREV START DATE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>09-03-2022</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ROUTE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>021-TSO-20358|15653-SUP-2|988-CP-1</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>S1 OT-LATE ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>S2 OT-LATE ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>S3+ OT-LATE ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>2</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SCHEDULE STATE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>REQUESTED</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SCHEDULE TYPE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>M</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SERVICE BUYER</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>5100-COM-2-FT|1|</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SHIPMENT SETTLEMENT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>40978-CAR-1|SBI|ARR|30|Y</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SHOW_MON_AMNT</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>Y</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TOTAL_SHIP_COSTS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>646.00 PLN</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRACKING LU-ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>TRUCK-100</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRANSIT SHARE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0.00</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRANSPORT AGREEMENT ID</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>003-DSO-143187</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRANSPORT PLANNER</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>MIING2|MIA INGREUS|||</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>VMR ORDERS</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>N</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ShipmentRefnum>
+							<otm:ShipmentRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>VMR SHARE</otm:Xid>
+								</otm:Gid>
+							</otm:ShipmentRefnumQualifierGid>
+							<otm:ShipmentRefnumValue>0.00</otm:ShipmentRefnumValue>
+						</otm:ShipmentRefnum>
+						<otm:ServiceProviderGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>31401-CAR-1</otm:Xid>
+							</otm:Gid>
+						</otm:ServiceProviderGid>
+						<otm:TransportModeGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>M-LCL</otm:Xid>
+							</otm:Gid>
+						</otm:TransportModeGid>
+						<!--otm:TransportModeGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>M-FCL</otm:Xid>
+							</otm:Gid>
+						</otm:TransportModeGid-->
+						<otm:StartDt>
+							<otm:GLogDate>20220315100000</otm:GLogDate>
+							<otm:TZId>Europe/Warsaw</otm:TZId>
+							<otm:TZOffset>+01:00</otm:TZOffset>
+						</otm:StartDt>
+						<otm:EndDt>
+							<otm:GLogDate>20220309100000</otm:GLogDate>
+							<otm:TZId>Europe/Warsaw</otm:TZId>
+							<otm:TZOffset>+01:00</otm:TZOffset>
+						</otm:EndDt>
+						<otm:CommercialTerms>
+							<otm:IncoTermGid>
+								<otm:Gid>
+									<otm:Xid>FCA</otm:Xid>
+								</otm:Gid>
+							</otm:IncoTermGid>
+						</otm:CommercialTerms>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CONSIGNEE</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>005-STO-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CONSIGNOR</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>15653-SUP-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CSM DROP-OFF</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>005-STO-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>BY CONTACT</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CSM PICK-UP</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>15653-SUP-2</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>BY CONTACT</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>EXECUTION CENTER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>021-TSO-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FIRST SERVICE BUYER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>5100-COM-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FREIGHT SERVICE SELLER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>40978-CAR-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>INVOICE RECEIVER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>5100-COM-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PLANNING AREA</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>021-TSO-1:988-CP-1_ORDX</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PLANNING CENTER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>021-TSO-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PRIMARY_SELLER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>ALFOR10</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>BY CONTACT</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SERVICE_CENTER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>5100-COM-1</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>BY CONTACT</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SHIP FROM</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>15653-SUP-2-KRZYSZTOF_RYSZAWA</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SHIP FROM</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>15653-SUP-2-MR_JACEK_ANTKOWIAK</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRANSPORT PLANNER</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>ADPAR</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>BY CONTACT</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:InvolvedParty>
+							<otm:TransactionCode>NP</otm:TransactionCode>
+							<otm:InvolvedPartyQualifierGid>
+								<otm:Gid>
+									<otm:Xid>LOGISTICS</otm:Xid>
+								</otm:Gid>
+							</otm:InvolvedPartyQualifierGid>
+							<otm:ContactRef>
+								<otm:Contact>
+									<otm:ContactGid>
+										<otm:Gid>
+											<otm:DomainName>I</otm:DomainName>
+											<otm:Xid>ITM-SYS</otm:Xid>
+										</otm:Gid>
+									</otm:ContactGid>
+									<otm:TransactionCode>NP</otm:TransactionCode>
+								</otm:Contact>
+							</otm:ContactRef>
+							<otm:ComMethodGid>
+								<otm:Gid>
+									<otm:Xid>EMAIL</otm:Xid>
+								</otm:Gid>
+							</otm:ComMethodGid>
+						</otm:InvolvedParty>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SHIPMENT INDICATOR HISTORY</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>0.27|0.07|||||||||||x</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PLANNED SHIPMENT CONTENT</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>1501.453|22833.776|1716.511|24390.618|28|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ENTITLED PARTIES</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>021-TSO|31401-CAR|40978-CAR|15653-SUP|988-CP</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI TRANSACTION</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>1006947962</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>1||0|||UNB|UNOB|2|IKEA.ITM|TRANSPOREON|220304|2002|I00268049|1|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>2||0|||UNH|I00268049|IFTMBF|D|96B|UN|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>3||0|||BGM|335|021-TSO-S10000063108|9|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>4||0|||DTM|137|202203042002|203|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>5||0|||TSR|27|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>6||0|||MOA|64|646.00|PLN|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>7||0|||CNT|7|1716.51|KGM|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>8||0|||CNT|15|24.39|MTQ|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>9||2|||TOD|FCA|GRUDZIADZ, PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>10||3|||RFF|AHI|003-DSO-107398-36|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>11||7|||TDT|20||3|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>12|11|7|8||LOC|5|15653-SUP-2|86|SITS SP. Z O.O. BRODNICA|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>13|12|7|8||DTM|200|2203090600-2203090600|713|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>14|11|7|8||LOC|7|988-CP-1|86|IKEA INDUSTRY SP. Z O.O. LUBAWA|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>15|14|7|8||DTM|17|202203091000|203|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>16||10|||NAD|CA|40978-CAR-1|86|C.H. ROBINSON POLSKA S.A|AI. JANA PAWLA II 29|WARSAW||00-867|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>17||10|||NAD|OY|021-TSO-1|86|IKEA PURCHASING SERVICES POLAND SP.|ALEJA KRAKOWSKA 61|WARSAW||05-090|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>18|17|10|11||CTA|IC|021-TSO-1|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>19|18|10|11||COM|no.reply(a)ikeadt.com|EM|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>20||10|||NAD|FG|5100-COM-1|86|IKEA SUPPLY AG|GRUESSENWEG 15|PRATTELN||4133|CH|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>21||10|||NAD|SE|40978-CAR-1|86|C.H. ROBINSON POLSKA S.A|AI. JANA PAWLA II 29|WARSAW||00-867|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>22||16|||GID|1|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>23|22|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>24|22|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>25|22|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>26|22|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>27|22|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>28|22|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>29|22|16|20||RFF|UCN|15653-SUP-I00018596146|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>30||16|||GID|2|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>31|30|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>32|30|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>33|30|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>34|30|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>35|30|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>36|30|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>37|30|16|20||RFF|UCN|15653-SUP-I00018596153|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>38||16|||GID|3|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>39|38|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>40|38|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>41|38|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>42|38|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>43|38|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>44|38|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>45|38|16|20||RFF|UCN|15653-SUP-I00018596161|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>46||16|||GID|4|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>47|46|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>48|46|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>49|46|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>50|46|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>51|46|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>52|46|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>53|46|16|20||RFF|UCN|15653-SUP-I00018596179|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>54||16|||GID|5|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>55|54|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>56|54|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>57|54|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>58|54|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>59|54|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>60|54|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>61|54|16|20||RFF|UCN|15653-SUP-I00018596187|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>62||16|||GID|6|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>63|62|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>64|62|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>65|62|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>66|62|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>67|62|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>68|62|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>69|62|16|20||RFF|UCN|15653-SUP-I00018596195|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>70||16|||GID|7|2|CT|2|PX|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>71|70|16|||TMD|3|CY/CY|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>72|70|16|||FTX|AAA|IKEA home furnishing products|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>73|70|16|17||NAD|SF|15653-SUP-2|86|SITS SP. Z O.O.|SITS SP. Z O.O.|SITS SP. Z O.O.|||UL.SIKORSKIEGO 60|BRODNICA|PLKP|87-300|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>74|70|16|17||NAD|ST|988-CP-1|86|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|IKEA INDUSTRY SP. Z O.O.|||UL. BOREK 3|LUBAWA||14-260|PL|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>75|70|16|18||MEA|AAE|ACP|MTQ|3.484|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>76|70|16|18||MEA|AAE|ACN|KGM|245.216|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>77|70|16|20||RFF|UCN|15653-SUP-I00018596203|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>78||32|||EQD|TE||T90|5|T90 - MAX 26000 KGS|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CIP EDI</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>79||0|||UNT|78|I00268049|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BOOKED SHIPMENT CONTENT</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>1501.453|22833.776|1716.511|24390.618|28|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>EDI LU DETAILS</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>||||||||||||||||LIVE LOAD|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>STOPREF</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>15653-SUP-2|20220309050000|20220309050000|20220309050000|BOOK</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>STOPREF</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>988-CP-1|20220309090000|20220309090000|20220309090000|BOOK</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LOADING UNIT TRIP</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>021|TSO|S10000063108|1|T90|3.484|245.216|TRUCK-100||2022-03-04T19:01:41.000+00:00|ADPAR|ITM|2022-03-07T13:04:54.000+00:00|ADPAR||4|2|||||||||||||T90 - MAX 26000 KGS|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SHIPMENT ROUTE</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>021|TSO|S10000063108|1|15653|SUP|2|988|CP|1|2022-03-15T06:00:00.000+01:00||2022-03-09T10:00:00.000+01:00||||2022-03-04T19:01:41.000+00:00|ADPAR|ITM|2022-03-07T13:04:54.000+00:00|ADPAR||5100|COM|||||2022-03-09T06:00:00.000+01:00|2022-03-09T10:00:00.000+01:00||||2|FT|988|CP|1|39.6|15653-SUP-I00018596203:15653-SUP-I00018596187:15653-SUP-I00018596146:15653-SUP-I00018596161:15653-SUP-I00018596195:15653-SUP-I00018596153:15653-SUP-I00018596179|||||2022-03-09T06:00:00.000+01:00|2022-03-09T10:00:00.000+01:00|</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LOADING UNIT TRIP LEG</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>021|TSO|S10000063108|1|1|15653|SUP|2|988|CP|1|M|003|DSO|107398|021|TSO|20358|2022-03-15T06:00:00.000+01:00|2022-03-09T10:00:00.000+01:00||2022-03-04T19:01:41.000+00:00|ADPAR|ITM|2022-03-07T13:04:54.000+00:00|ADPAR||FCA||||2022-03-09T06:00:00.000+01:00|||2022-03-09T10:00:00.000+01:00||||M||15653|SUP|2||||988|CP|1||||||||||</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CARRIER REFERENCE</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>BOOK1</otm:RemarkText>
+						</otm:Remark>
+					</otm:ShipmentHeader>
+					<otm:SEquipment>
+						<otm:TransactionCode>NP</otm:TransactionCode>
+						<otm:EquipmentTypeGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>T90</otm:Xid>
+							</otm:Gid>
+						</otm:EquipmentTypeGid>
+						<otm:EquipmentGroupGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>T90-24000</otm:Xid>
+							</otm:Gid>
+						</otm:EquipmentGroupGid>
+						<otm:ScaleName>TE</otm:ScaleName>
+						<otm:ShipmentSEquipmentInfo>
+							<otm:CapacityUsageGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>4745784F79636D43665A20220304200255843581843581</otm:Xid>
+								</otm:Gid>
+							</otm:CapacityUsageGid>
+						</otm:ShipmentSEquipmentInfo>
+						<otm:IsFreight>Y</otm:IsFreight>
+					</otm:SEquipment>
+					<otm:ShipmentStop>
+						<otm:StopSequence>1</otm:StopSequence>
+						<otm:LocationRef>
+							<otm:LocationGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>15653-SUP-2</otm:Xid>
+								</otm:Gid>
+							</otm:LocationGid>
+						</otm:LocationRef>
+						<otm:DistFromPrevStop>
+							<otm:Distance>
+								<otm:DistanceValue>0.0</otm:DistanceValue>
+								<otm:DistanceUOMGid>
+									<otm:Gid>
+										<otm:Xid>KM</otm:Xid>
+									</otm:Gid>
+								</otm:DistanceUOMGid>
+							</otm:Distance>
+						</otm:DistFromPrevStop>
+						<otm:ArrivalTime>
+							<otm:EventTime>
+								<otm:PlannedTime>
+									<otm:GLogDate>20220309000000</otm:GLogDate>
+									<otm:TZId>Europe/Warsaw</otm:TZId>
+									<otm:TZOffset>+01:00</otm:TZOffset>
+								</otm:PlannedTime>
+							</otm:EventTime>
+						</otm:ArrivalTime>
+						<otm:DepartureTime>
+							<otm:EventTime>
+								<otm:PlannedTime>
+									<otm:GLogDate>20220309040000</otm:GLogDate>
+									<otm:TZId>Europe/Warsaw</otm:TZId>
+									<otm:TZOffset>+01:00</otm:TZOffset>
+								</otm:PlannedTime>
+							</otm:EventTime>
+						</otm:DepartureTime>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BOOKING OFFICE ID</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>40978-CAR-1</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BOOKING OFFICE NAME</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>C.H. ROBINSON POLSKA S.A</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CSM BUYER</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>CSM100018596187|5100-COM-2-FT|5100-COM-3-RT</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CSM DATA</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>CSM100018596187|N|15653-SUP-1||PL|005-STO-1||DK|TRANSPORT|15653-SUP-2||PL|20220308220000|988-CP-1||PL|20220309040000|15653-SUP-I00018596187|P|3.262||DIRECT||15653-SUP-2|005-STO-1|</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>MAIN CARRIER ID</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>31401-CAR-1</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>MAIN CARRIER NAME</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>C.H. ROBINSON EUROPE B.V.</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SCHEDULE STATE</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>REQUESTED</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>STOP_PALLET_COUNT</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>2</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>STOP_SCHED_REQ</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>1|15653-SUP-2|SITS SP. Z O.O.|PL|N|2022-03-15T06:00:00.000+01:00|2022-03-15T10:00:00.000+01:00|1|3.484|0||N|39.5931601562500006252776074688881635666|</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:StopType>P</otm:StopType>
+					</otm:ShipmentStop>
+					<otm:ShipmentStop>
+						<otm:StopSequence>2</otm:StopSequence>
+						<otm:LocationRef>
+							<otm:LocationGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>988-CP-1</otm:Xid>
+								</otm:Gid>
+							</otm:LocationGid>
+						</otm:LocationRef>
+						<otm:DistFromPrevStop>
+							<otm:Distance>
+								<otm:DistanceValue>39.59316015625</otm:DistanceValue>
+								<otm:DistanceUOMGid>
+									<otm:Gid>
+										<otm:Xid>KM</otm:Xid>
+									</otm:Gid>
+								</otm:DistanceUOMGid>
+							</otm:Distance>
+						</otm:DistFromPrevStop>
+						<otm:ArrivalTime>
+							<otm:EventTime>
+								<otm:PlannedTime>
+									<otm:GLogDate>20220309060000</otm:GLogDate>
+									<otm:TZId>Europe/Warsaw</otm:TZId>
+									<otm:TZOffset>+01:00</otm:TZOffset>
+								</otm:PlannedTime>
+							</otm:EventTime>
+						</otm:ArrivalTime>
+						<otm:DepartureTime>
+							<otm:EventTime>
+								<otm:PlannedTime>
+									<otm:GLogDate>20220309060000</otm:GLogDate>
+									<otm:TZId>Europe/Warsaw</otm:TZId>
+									<otm:TZOffset>+01:00</otm:TZOffset>
+								</otm:PlannedTime>
+							</otm:EventTime>
+						</otm:DepartureTime>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BOOKING OFFICE ID</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>40978-CAR-1</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>BOOKING OFFICE NAME</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>C.H. ROBINSON POLSKA S.A</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CSM BUYER</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>CSM100018596187|5100-COM-2-FT|5100-COM-3-RT</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CSM DATA</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>CSM100018596187|N|15653-SUP-1||PL|005-STO-1||DK|TRANSPORT|15653-SUP-2||PL|20220308220000|988-CP-1||PL|20220309040000|15653-SUP-I00018596187|D|3.262||DIRECT||15653-SUP-2|005-STO-1|</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>MAIN CARRIER ID</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>31401-CAR-1</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>MAIN CARRIER NAME</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>C.H. ROBINSON EUROPE B.V.</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>SCHEDULE STATE</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>REQUESTED</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>STOP_PALLET_COUNT</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>2</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:Refnum>
+							<otm:RefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>STOP_SCHED_REQ</otm:Xid>
+								</otm:Gid>
+							</otm:RefnumQualifierGid>
+							<otm:RefnumValue>1|988-CP-1|IKEA INDUSTRY SP. Z O.O.|PL|N|2022-03-09T10:00:00.000+01:00|2022-03-09T10:00:00.000+01:00|1|3.484|0||N|0|</otm:RefnumValue>
+						</otm:Refnum>
+						<otm:StopType>D</otm:StopType>
+					</otm:ShipmentStop>
+					<otm:Release>
+						<otm:ReleaseGid>
+							<otm:Gid>
+								<otm:DomainName>I</otm:DomainName>
+								<otm:Xid>CSM100018596187</otm:Xid>
+							</otm:Gid>
+						</otm:ReleaseGid>
+						<otm:TransactionCode>NP</otm:TransactionCode>
+						<otm:ReleaseHeader>
+							<otm:ReleaseName>15653-SUP-I00018596187</otm:ReleaseName>
+							<otm:CommercialTerms>
+								<otm:IncoTermGid>
+									<otm:Gid>
+										<otm:Xid>FCA</otm:Xid>
+									</otm:Gid>
+								</otm:IncoTermGid>
+								<otm:TermLocationText>GRUDZIADZ, PL</otm:TermLocationText>
+							</otm:CommercialTerms>
+						</otm:ReleaseHeader>
+						<otm:TotalWeightVolume>
+							<otm:WeightVolume>
+								<otm:Weight>
+									<otm:WeightValue>245.21584</otm:WeightValue>
+									<otm:WeightUOMGid>
+										<otm:Gid>
+											<otm:Xid>KG</otm:Xid>
+										</otm:Gid>
+									</otm:WeightUOMGid>
+								</otm:Weight>
+								<otm:Volume>
+									<otm:VolumeValue>3484.374</otm:VolumeValue>
+									<otm:VolumeUOMGid>
+										<otm:Gid>
+											<otm:Xid>DMQ</otm:Xid>
+										</otm:Gid>
+									</otm:VolumeUOMGid>
+								</otm:Volume>
+							</otm:WeightVolume>
+						</otm:TotalWeightVolume>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:Xid>GLOG</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>I.CSM100018596187</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CBP CSM</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>N</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CNS LUT CODE</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>T90</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CNS MOT CODE</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>M</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CP INBOUND SHIPMENT ID</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>021-TSO-S10000063108 (988-CP-1)</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>CURRENT SHIPMENT ID</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>021-TSO-S10000063108</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ECIS CONSIGNMENT ID</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>15653-SUP-I00018596187</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FINAL SERVICE BUYER</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>5100-COM-3-RT</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FIRST SERVICE BUYER</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>5100-COM-2-FT</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>FTI CSM FLOWTYPE</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>DIRECT</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>HAS ITM SHIPMENT</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>Y</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LAST ALERT</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>CSM PARTIALLY CONNECTED [AC3601]</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>LATEST TRACKING INFORMATION</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>Created 04-MAR-2022 ETA:12-MAR-2022</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>NEXT_LINE_ID</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>3</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ORDERED VOLUME</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>3.484</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ORDERED WEIGHT</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>245.216</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>OTM CONSIGNMENT ID</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>OTM0085378</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>OTM CSM BU</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>021-TSO</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>OTM CSM NUMBER</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>100018596187</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>PRIORITY</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>600</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRANSIT SHARE</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>0.00</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:ReleaseRefnum>
+							<otm:ReleaseRefnumQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>TRANSIT VOLUME</otm:Xid>
+								</otm:Gid>
+							</otm:ReleaseRefnumQualifierGid>
+							<otm:ReleaseRefnumValue>0</otm:ReleaseRefnumValue>
+						</otm:ReleaseRefnum>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>ENTITLED PARTIES</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>15653-SUP|988-CP|005-STO</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>24212-PREV</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>021-TSO-S10000063108|M-FCL|||</otm:RemarkText>
+						</otm:Remark>
+						<otm:Remark>
+							<otm:RemarkQualifierGid>
+								<otm:Gid>
+									<otm:DomainName>I</otm:DomainName>
+									<otm:Xid>24212-PREV</otm:Xid>
+								</otm:Gid>
+							</otm:RemarkQualifierGid>
+							<otm:RemarkText>021-TSO-S10000063101|M-FCL|||</otm:RemarkText>
+						</otm:Remark>
+					</otm:Release>
+				</otm:Shipment>
+			</otm:PlannedShipment>
+		</otm:GLogXMLElement>
+	</otm:TransmissionBody>
+</otm:Transmission>

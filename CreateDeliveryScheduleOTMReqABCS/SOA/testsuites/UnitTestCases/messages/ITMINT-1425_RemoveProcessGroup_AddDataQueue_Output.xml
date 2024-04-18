@@ -1,0 +1,83 @@
+<Transmission xmlns:oraxsl="http://www.oracle.com/XSL/Transform/java" xmlns:oracle-xsl-mapper="http://www.oracle.com/xsl/mapper/schemas" xmlns:partns="http://xmlns.oracle.com/apps/otm" xmlns="http://xmlns.oracle.com/apps/otm">
+	<partns:TransmissionHeader>
+		<partns:Version>6.4.3</partns:Version>
+		<partns:TransactionCount>1</partns:TransactionCount>
+		<partns:SenderHostName>DES_SCHEDULE_RESPONSE</partns:SenderHostName>
+		<partns:ReceiverHostName>https://cmseelm-lx4298.ikeadt.com:8081</partns:ReceiverHostName>
+		<partns:SenderSystemID>FMW</partns:SenderSystemID>
+		<partns:SenderTransmissionNo/>
+		<partns:AckSpec>
+			<partns:ComMethodGid>
+				<partns:Gid>
+					<partns:Xid>SERVICE</partns:Xid>
+				</partns:Gid>
+			</partns:ComMethodGid>
+			<partns:AckOption>NO</partns:AckOption>
+			<partns:ContactGid>
+				<partns:Gid>
+					<partns:DomainName>I</partns:DomainName>
+					<partns:Xid>DES_SCHEDULE_RESPONSE</partns:Xid>
+				</partns:Gid>
+			</partns:ContactGid>
+		</partns:AckSpec>
+		<partns:IsProcessInSequence>Y</partns:IsProcessInSequence>
+		<partns:StopProcessOnError>N</partns:StopProcessOnError>
+		<partns:DataQueueGid>
+			<partns:Gid>
+				<partns:DomainName>I</partns:DomainName>
+				<partns:Xid>I_INTEGRATION_IN_PRIORITY</partns:Xid>
+			</partns:Gid>
+		</partns:DataQueueGid>
+	</partns:TransmissionHeader>
+	<partns:TransmissionBody>
+		<partns:GLogXMLElement>
+			<partns:ShipmentStatus>
+				<partns:ShipmentRefnum>
+					<partns:ShipmentRefnumQualifierGid>
+						<partns:Gid>
+							<partns:Xid>GLOG</partns:Xid>
+						</partns:Gid>
+					</partns:ShipmentRefnumQualifierGid>
+					<partns:ShipmentRefnumValue>I.CNS-SHIPMENT</partns:ShipmentRefnumValue>
+				</partns:ShipmentRefnum>
+				<partns:StatusLevel>SHIPMENT</partns:StatusLevel>
+				<partns:StatusCodeGid>
+					<partns:Gid>
+						<partns:DomainName>I</partns:DomainName>
+						<partns:Xid>DES</partns:Xid>
+					</partns:Gid>
+				</partns:StatusCodeGid>
+				<partns:Remark>
+					<partns:RemarkSequence>1</partns:RemarkSequence>
+					<partns:RemarkQualifierGid>
+						<partns:Gid>
+							<partns:DomainName>I</partns:DomainName>
+							<partns:Xid>DES SCHEDULE RESPONSE</partns:Xid>
+						</partns:Gid>
+					</partns:RemarkQualifierGid>
+					<partns:RemarkText>21183-SUP-6|Y|NS||</partns:RemarkText>
+				</partns:Remark>
+				<partns:Remark>
+					<partns:RemarkSequence>1</partns:RemarkSequence>
+					<partns:RemarkQualifierGid>
+						<partns:Gid>
+							<partns:DomainName>I</partns:DomainName>
+							<partns:Xid>DES SCHEDULE RESPONSE</partns:Xid>
+						</partns:Gid>
+					</partns:RemarkQualifierGid>
+					<partns:RemarkText>701-CP-1|Y|NS||</partns:RemarkText>
+				</partns:Remark>
+				<partns:FlexFieldStrings>
+					<partns:Attribute1>015-TSO-S10000049890</partns:Attribute1>
+					<partns:Attribute2>
+SHP 015 TSO S10000049890
+Location 21183 SUP 6 No schedule exists
+Location 701 CP 1 No schedule exists
+</partns:Attribute2>
+					<partns:Attribute10>DES</partns:Attribute10>
+					<partns:Attribute20>015-TSO-S10000049890</partns:Attribute20>
+				</partns:FlexFieldStrings>
+			</partns:ShipmentStatus>
+		</partns:GLogXMLElement>
+	</partns:TransmissionBody>
+</Transmission>
