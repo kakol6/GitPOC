@@ -101,10 +101,10 @@
             <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:ShipmentTypeNew"/>
           </tns:ShipmentType>
           <tns:LoadingUnitTypeEdi>
-            <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:LoadingUnitTypeEdiNew"/>
+            <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:LoadingUnitTypeEdi"/>
           </tns:LoadingUnitTypeEdi>
           <tns:PartLoadFlag>
-            <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:PartLoadFlagNew"/>
+            <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:PartLoadFlag"/>
           </tns:PartLoadFlag>
           <tns:TransitShpFlag>
             <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:TransitShpFlag"/>
