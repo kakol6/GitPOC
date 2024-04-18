@@ -128,7 +128,7 @@
               </tns:BuType>
             </tns:Creator>
           </tns:ShipmentId>
-          <xsl:if test="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:TransportAgreementId">
+          <xsl:if test="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:TransportAgreementIdNew">
             <tns:TransportAgreementId>
               <xsl:if test="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:TransportAgreementId/ns0:Creator">
                 <tns:Creator>
