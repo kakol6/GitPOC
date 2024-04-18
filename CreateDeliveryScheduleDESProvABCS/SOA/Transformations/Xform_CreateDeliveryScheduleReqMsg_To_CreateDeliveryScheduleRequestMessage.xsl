@@ -121,7 +121,7 @@
             </tns:ShpNumber>
             <tns:Creator>
               <tns:Code>
-                <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:ShipmentId/ns0:Creator/ns0:Code"/>
+                <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:ShipmentId/ns0:Creator/ns0:CodeNew"/>
               </tns:Code>
               <tns:BuType>
                 <xsl:value-of select="/ns0:CreateDeliveryScheduleEBM/ns0:DataArea/ns0:CreateDeliverySchedule/ns0:DeliverySchedule/ns0:DATA/ns0:InVoSchedulingRequestITM/ns0:ShipmentId/ns0:Creator/ns0:BuType"/>
